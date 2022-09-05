@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/stylepainel.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <title>Painel-Search Ship</title>
+</head>
+<body>
+    <header>
+        <div id="infoheader">
+            <p>Ola,Seja bem vindo,<%=nameUser%></p>
+            <p><a href="/login"><i class="bi bi-box-arrow-right"></i></a></p>
+        </div>
+        <% if (imoIDUpdate == null) { %>
+            <%- include('./components/form',{titleForm:"ADICIONE UM IMO", action:"create", value:"",idBtn:"addButton",nameBtn:"Adicionar"}) %>
+        <% } else { %>
+            <%- include('./components/form',{titleForm:"EDITANDO O IMO", action:`update/${imoIDUpdate.imo}`, value:imoIDUpdate.imo,idBtn:"updateButton",nameBtn:"Atualizar"}) %>
+        <% } %>
+        <a href="/searchShip" onclick="loading()" ><button id="searchShipButton">Search Ship</button></a>
+    </header>
+    <section id="imo">
+        <ul>
+            <% imoList.forEach((imoElement,i)=>{ %>
+                <li>
+                    <div>
+                        <p>IMO: <%= imoElement.imo %></p>
+                    </div>
+                    <div>
+                        <a class="btnDelete"  href="/getById/<%=i%>/delete"><i class="bi bi-trash3"></i></a>
+                        <a class="btnUpdate" href="/getById/<%=i%>/update"><i class="bi bi-pencil-square"></i></a>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+
+        <% if (imoIDDelete != null) { %>
+            <%- include('./components/modalDel') %>
+        <% }%>
+    </section>
+    <script>
+        function loading(){
+            alert("Estamos fazendo o Search Ship! Após o carregamento, iremos direto para a página");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<h1><%= titleForm %></h1>
+<form action="/<%= action %>" method="POST">
+    <input type="text" minlength="7" maxlength="7"name="imo" onkeypress="return onlynumber();"id="imo" placeholder="Insira um IMO" value="<%= value %>">
+    <button type="submit" id="<% idBtn %>"><%= nameBtn %></button>
+</form>
+
+<script>
+    function onlynumber(evt) {
+   var theEvent = evt || window.event;
+   var key = theEvent.keyCode || theEvent.which;
+   key = String.fromCharCode( key );
+   //var regex = /^[0-9.,]+$/;
+   var regex = /^[0-9.]+$/;
+   if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+   }
+}
+</script>

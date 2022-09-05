@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styleloginandregister.css">
+    <title>Search Ship-Sign In</title>
+</head>
+<body>
+    <div id="container">
+        <div id="content">
+            <div class="loginHeader">
+                <p>Sign in</p>
+                <a href="/register"><p id="p2">Sign up</p></a>
+            </div>
+            <form action="/login" method="POST"  class="inputSpace" >
+                <div class="inputSpace"style="gap:0">
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email">
+                </div>
+                <div class="inputSpace" style="gap:0">
+                    <label for="password">Password</label>
+                    <input type="password" name="password">
+                </div>
+                <div id="divbutton">
+                    <button id="buttonLogin">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+#interrogation i{
+    font-size: 100;
+    color: #7FB5FF;
+}
+
+#textp{
+    font-size: 23;
+    color: #7FB5FF;
+}
+
+#p1{
+    display: flex;
+    justify-content: center;
+    font-size: 40;
+    color: #001D6E;
+}
+

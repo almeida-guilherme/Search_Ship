@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient( 135deg, #C4DDFF, #7FB5FF,#C4DDFF);
+}
+
+#content{
+    width: 30%;
+    height: 50%;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, .212);
+}
+
+.loginHeader{
+    display: flex;
+    justify-content: space-around;
+    color: #001D6E;
+    font-size: 37;
+    font-weight: 600;
+}
+
+.loginHeader p::after{
+    content: "";
+    display: block;
+    width: 3.7rem;
+    height: 0.3rem;
+    background-color: #7FB5FF;
+    position: absolute;
+    border-radius: 10px;
+}
+
+#p2{color: #001d6e28; transition: all 0.5s ease-in-out; cursor: pointer;}
+#p2::after{background-color: #7fb4ff28;}
+
+#p2:hover{color: #001d6e5e;}
+
+.inputSpace{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 60px;
+    border: none;
+}
+
+.inputSpace input{
+    border: none;
+    border-radius: 6px;
+    width: 15vw;
+    height: 4.3vh;
+    outline: 1px solid #7FB5FF;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, .150);
+}
+
+.inputSpace input:hover{
+    background-color: aliceblue;
+}
+
+#divbutton{display: flex;align-self: center;box-shadow: 5px 5px 10px rgb(0, 0, 0, .212);}
+
+#buttonLogin {
+  
+    background: #001D6E;
+    border: none;
+    border-radius: 6px;
+    width: 10vw;
+    height: 5vh;
+    color: #fff;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+#buttonLogin:hover{background: #7FB5FF;}

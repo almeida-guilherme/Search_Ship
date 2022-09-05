@@ -1,0 +1,10 @@
+#p1{color: #001d6e28; transition: all 0.5s ease-in-out; cursor: pointer;}
+#p1::after{background-color: #7fb4ff28;}
+
+#p1:hover{color: #001d6e5e;}
+
+.inputSpace{
+    gap: 30px;
+}
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "searchship-v0.3",
+  "version": "0.3.0",
+  "description": "Version 0.3 of Search Shipping",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "author": "Guilherme Henrique",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.6",
+    "nodemon": "^2.0.19",
+    "puppeteer": "^15.5.0"
+  }
+}

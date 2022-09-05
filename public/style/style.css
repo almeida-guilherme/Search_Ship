@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: #C4DDFF
+    /* background: linear-gradient( 180deg,#67a4fa,#7FB5FF, #C4DDFF, #7FB5FF,#C4DDFF); */
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 16.5%;
+}
+
+header h1{
+    font-size: 35;
+    color: #7FB5FF;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.maintext{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    height: 100%;
+}
+
+#p1{
+    font-size: 30;
+    font-weight: 700;
+    color: #001D6E;
+    width: 100%;
+    height: 33%;
+}
+
+#p2{
+    font-size: 16;
+    font-weight: 500;
+    color: #7FB5FF;
+    width: 100%;
+    height: 33%;
+}
+
+.mainimg{
+    width: 40%;
+    height: 100%;
+}
+
+.mainimg div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+#imgShip{
+    width: 50%;
+    height: 50%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 33%;
+}
+
+.buttons button{
+    background: #001D6E;
+    border: none;
+    border-radius: 60px;
+    width: 10vw;
+    height: 5vh;
+    color: #fff;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, .212);
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    background: #7FB5FF;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 43.5%;
+}
+
+footer section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80%;
+    height: 100%;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, .212);
+}
+
+footer section i {
+    font-size: 100;
+    color: #001D6E;
+}
+
+.explain{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#warm{
+    font-size: 30;
+    font-weight: 600;
+    color: #001D6E;
+}
+
+#warmContent{
+    font-size: 19;
+    font-weight: 500;
+    color: #7FB5FF;
+}
