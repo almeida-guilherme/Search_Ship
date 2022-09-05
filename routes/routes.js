@@ -9,9 +9,11 @@ router.get("/getByID/:id/:method", Controller.getById);
 router.get("/deleteId/:id", Controller.deleteId);
 router.get("/searchShip",Controller.SearchShip);
 router.get("/CVS",Controller.excelpage);
+router.get("/changePassword",Controller.changePassword)
 
 router.post("/register",Controller.registerpost)
 router.post("/login",Controller.loginpost)
+router.post("/changePassword",Controller.changePasswordPost)
 router.post("/create",Controller.createPainel)
 router.post("/update/:id", Controller.update);
 

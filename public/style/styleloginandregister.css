@@ -88,4 +88,18 @@ a{
     cursor: pointer;
 }
 
+#forgotpassword{
+    display: flex;
+    margin-top:10px ;
+    padding: 0;
+    font-weight: 700;
+    font-size: small;
+    color: gray;
+    transition: all 0.5s ease-out;
+}
+
+#forgotpassword:hover{
+    color: #7FB5FF;
+}
+
 #buttonLogin:hover{background: #7FB5FF;}

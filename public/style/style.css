@@ -29,6 +29,16 @@ header h1{
     color: #7FB5FF;
 }
 
+header h1::after{
+    content: "";
+    display: block;
+    width: 3.7rem;
+    height: 0.3rem;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 10px;
+}
+
 main{
     display: flex;
     justify-content: center;

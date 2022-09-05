@@ -4,7 +4,8 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken");
 const webScrapping = require("../public/puppeteer/index")
 const excelCreate = require("../public/excel/creater")
-const excelDelete = require("../public/excel/delete")
+const excelDelete = require("../public/excel/delete");
+const { ConsoleMessage } = require("puppeteer");
 var emailUser
 var nameUser
 var token
@@ -116,7 +117,6 @@ const getById = async(req,res) => {
             res.render("painel",{imoList,imoIDUpdate,imoIDDelete:null,nameUser})
         }else{
             const imoIDDelete = confirmUser.imo[req.params.id]
-            console.log(`imodelete é ${imoIDDelete.imo}`)
             res.render("painel",{imoList,imoIDUpdate:null,imoIDDelete,nameUser})
         }
     } catch (error) {
@@ -127,13 +127,7 @@ const getById = async(req,res) => {
 const deleteId = async(req,res) => {
     try {
             const imo= req.params.id
-        //     await User.updateOne( 
-        //     {email:emailUser},
-        //     { $pull: { imo:{_id:imo,imo:imo} } }
-        //   )
         await User.updateOne({email:emailUser,'imo._id':imo},{$pull:{imo:{'imo':imo}}})
-        // const livro = await User.findOne({'imo.imo':imo})
-        // console.log(livro)
         res.redirect("/painel")
     } catch (error) {
         res.status(404).send({error:error.message }) 
@@ -152,10 +146,7 @@ const update = async (req,res) => {
             {email:emailUser,"imo._id":imoID},
             {$set: {"imo.$._id":imo.imo }}
           )
-        // await User.updateOne({email:emailUser,'imo._id':imo},{$pull:{imo:{'imo':imo}}})
 
-        console.log(`BATATA`+ imo.imo)
-        console.log(`FEIJAO`+ imoID)
         res.redirect("/painel")
     } catch (error) {
         res.status(404).send({error:error.message})
@@ -190,6 +181,41 @@ const excelpage  = async(req,res) => {
     }
 }
 
+const changePassword = async(req,res) => {
+    try {
+        res.render("changePassword")
+    } catch (error) {
+        res.status(404).send({error:error.menssage});
+    }
+}
+
+const changePasswordPost = async(req,res) => {
+    try {
+        const {username,email,password,newPassword } = req.body
+        const confirmUser = await User.findOne({email:req.body.email})
+        if(!confirmUser){
+            erro = "Esse e-mail não existe"
+            return res.render("registernotsuccess",{erro})
+        }
+
+        const passwordAndUserMatch = bcrypt.compareSync(req.body.password, confirmUser.password)
+        if(!passwordAndUserMatch){
+            erro = "Senha e e-mail não convergem"
+            return res.render("registernotsuccess",{erro})
+        }
+        const passwordWorth = bcrypt.hashSync(newPassword)
+        await User.updateOne( 
+            {email:confirmUser.email},
+            {$set: {password:passwordWorth }}
+          )
+
+        console.log(passwordWorth)
+        res.redirect("login")
+    } catch (error) {
+        res.status(404).send({error:error.mensage}); 
+    }
+}
 
 
-module.exports = {registerget,registerpost,loginget,loginpost,painel,createPainel,getById,deleteId,update,SearchShip,excelpage}
+
+module.exports = {registerget,registerpost,loginget,loginpost,painel,createPainel,getById,deleteId,update,SearchShip,excelpage,changePassword,changePasswordPost}
