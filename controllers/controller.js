@@ -209,7 +209,6 @@ const changePasswordPost = async(req,res) => {
             {$set: {password:passwordWorth }}
           )
 
-        console.log(passwordWorth)
         res.redirect("login")
     } catch (error) {
         res.status(404).send({error:error.mensage}); 
