@@ -1,6 +1,5 @@
 const pup = require("puppeteer") ;
 const url = "https://www.marinetraffic.com";
-// const searchFor = ["9262871","9234135"];
 
 
 //Web Scrapping
@@ -45,7 +44,6 @@ const searchShip = async(i) => {
         await browser.close()
     } catch (error) {
         console.log("Ocorreu um erro, estamos refazendo o shipping")
-        console.log(error)
         await searchShip(i)
     }
 };
