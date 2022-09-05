@@ -177,7 +177,6 @@ const SearchShip = async(req,res) => {
 const excelpage  = async(req,res) => {
     try {
         res.header("authorization-token",token)
-        console.log('esse é o searchValue'+ searchValue)
         const emailUser = confirmUser.email
         const excel = await excelCreate.excelCreate(searchValue,emailUser)
         if(excel){
