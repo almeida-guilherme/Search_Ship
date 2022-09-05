@@ -7,7 +7,7 @@ const url = "https://www.marinetraffic.com";
 const searchShip = async(i) => {
 
     try {
-        const browser = await pup.launch({headless:true})
+        const browser = await pup.launch({headless:true,args:['--no-sandbox','--disable-setuid-sandbox'],})
         const page = await browser.newPage()
         page.setViewport({ width: 1920, height: 1080 });
         console.log("Iniciei")
