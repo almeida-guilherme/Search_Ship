@@ -22,6 +22,7 @@ function sleep(ms) {
 
 const registerget = async(req,res) => {
     try {
+        console.log("inicio do teste")
         res.render("register")
     } catch (error) {
         res.status(404).send({error:error.menssage});
